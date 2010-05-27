@@ -4,7 +4,7 @@ require 'rake'
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
-    gem.name = "hydra"
+    gem.name = "schleyfox-hydra"
     gem.summary = %Q{Distributed testing toolkit}
     gem.description = %Q{Spread your tests over multiple machines to test your code faster.}
     gem.email = "nick@smartlogicsolutions.com"
@@ -12,7 +12,7 @@ begin
     gem.authors = ["Nick Gauthier"]
     gem.add_development_dependency "shoulda", "= 2.10.3"
     gem.add_development_dependency "rspec", "= 1.3.0"
-    gem.add_development_dependency "cucumber", "= 0.7.2"
+    gem.add_development_dependency "cucumber", ">= 0.7.2"
   end
   Jeweler::GemcutterTasks.new
 rescue LoadError

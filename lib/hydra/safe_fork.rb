@@ -12,6 +12,12 @@ class SafeFork
           rescue ActiveRecord::AdapterNotSpecified
             # AR was defined but we didn't have a connection
           end
+
+          #run after_fork hook
+          if defined?(RAILS_ROOT) && File.exists?(after_fork = File.join(RAILS_ROOT, 'test', 'hydra', 'after_fork.rb')) 
+            load after_fork
+          end
+
           yield
         ensure
           # make sure we remove the connection before we're done
